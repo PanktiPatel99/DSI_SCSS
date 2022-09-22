@@ -1,6 +1,170 @@
 @import "variable";
+@import "mixin";
 
 body {
-  margin: 0;
-  background-color: $badass;
+  font-family: $font_family_2;
+}
+
+/*  header  */
+
+header {
+  @include box-shadow(0px 1px, 4px);
+  @media (max-width: 767.98px) {
+    @include box-shadow(0px 0px, 8px);
+  }
+  li {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    color: $li_color;
+  }
+  .btn {
+    @include button;
+    background-color: $bg_white;
+    border: none;
+  }
+  @include dropdowntoggler;
+  @include navbartoggler;
+}
+
+/*  blog  */
+
+.blog {
+  h1 {
+    @include h1base;
+  }
+  p {
+    @include pbase;
+    font-size: 20px;
+    line-height: 29px;
+  }
+  .btn {
+    @include button;
+    @include box-shadow(1px 2px, 4px);
+    padding: 12px 32px;
+    font-size: 20px;
+  }
+  @media (max-width: 767.98px) {
+    img {
+      padding: 0px 18px;
+    }
+  }
+}
+
+/* welcome  */
+
+.welcome {
+  h2 {
+    @include h2base;
+  }
+  p {
+    @include pbase;
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      padding-left: 12px;
+    }
+    @media (max-width: 767.98px) {
+      padding-left: 12px;
+    }
+  }
+  img {
+    @include img(440px, 395px);
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      @include img(427px, 437px);
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      @include img(430px, 405.54px);
+    }
+    @media (max-width: 767.98px) {
+      @include img(367px, 350.54px);
+    }
+  }
+  background-color: $welcome_bg;
+}
+
+/*  product service  */
+
+.productservice {
+  h2 {
+    @include h2base;
+  }
+  h3 {
+    @include h3base;
+  }
+  img {
+    @include img(100px, 100px);
+  }
+  p {
+    @include pbase;
+    min-height: 108px;
+    max-width: 329px;
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      min-height: 135px;
+    }
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      max-width: 359px;
+    }
+    @media (max-width: 767.98px) {
+      max-width: 359px;
+    }
+  }
+  .btn {
+    @include button;
+    @include box-shadow(1px 1px, 2px);
+    padding: 8px 16px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26.04px;
+  }
+}
+
+/* footer  */
+
+.footer {
+  color: $fc_4;
+  h4 {
+    @include h4base;
+  }
+  p {
+    @include pbase;
+  }
+  .title {
+    font-weight: $fw_bold_2;
+  }
+  .details {
+    font-weight: 300;
+  }
+  @media (max-width: 767.98px) {
+    .silverlight {
+      width: 121.35px;
+      height: 34.92px;
+    }
+    .dotnet {
+      width: 120.03px;
+      height: 41.66px;
+    }
+    .java {
+      width: 91.17px;
+    }
+    .ios {
+      width: 69.78px;
+    }
+    .android {
+      width: 145.54px;
+    }
+    .blackberry {
+      width: 145.54px;
+    }
+  }
+}
+
+/*  copyright  */
+
+.copyright {
+  background-color: $bg_1;
+  p {
+    @include pbase;
+    color: $f_white;
+    font-size: 18px;
+    line-height: 21px;
+  }
 }
