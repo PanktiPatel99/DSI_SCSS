@@ -34,16 +34,14 @@ header {
     @include h1base;
   }
   p {
-    @include pbase;
-    font-size: 20px;
-    line-height: 29px;
+    @include pbase(20px, 29px);
   }
   .btn {
     @include button;
     @include box-shadow(1px 2px, 4px);
     padding: 12px 32px;
     font-size: 20px;
-    &:hover{
+    &:hover {
       background-color: $bg_hover;
     }
   }
@@ -165,9 +163,7 @@ header {
 .copyright {
   background-color: $bg_1;
   p {
-    @include pbase;
+    @include pbase(18px, 21px);
     color: $f_white;
-    font-size: 18px;
-    line-height: 21px;
   }
 }
